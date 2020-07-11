@@ -32,6 +32,17 @@ fn main() {
                 .route(web::delete().to_async(api::products::destroy))
                 .route(web::patch().to_async(api::products::update))
         )
+        .service(
+            web::resource("/links")
+                .route(web::get().to_async(api::links::index))
+                .route(web::post().to_async(api::links::create))
+        )
+        .service(
+            web::resource("links/{id}")
+            .route(web::get().to_async(api::links::show))
+            .route(web::delete().to_async(api::links::delete))
+            .route(web::patch().to_async(api::links::update))
+        )
     )
     .bind("127.0.0.1:8088").unwrap()
     .start();

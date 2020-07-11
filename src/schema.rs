@@ -1,4 +1,12 @@
 table! {
+    links (id) {
+        id -> Int4,
+        title -> Varchar,
+        descripton -> Nullable<Varchar>,
+    }
+}
+
+table! {
     products (id) {
         id -> Int4,
         name -> Varchar,
@@ -6,3 +14,8 @@ table! {
         price -> Nullable<Int4>,
     }
 }
+
+allow_tables_to_appear_in_same_query!(
+    links,
+    products,
+);
