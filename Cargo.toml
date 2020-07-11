@@ -1,0 +1,16 @@
+[package]
+name = "mystore"
+version = "0.1.0"
+authors = ["tjjone98 <tzero1898@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix = "0.8"
+actix-web = "1.0.0-beta"
+diesel = { version = "1.4.4", features = ["postgres"] }
+dotenv = "0.15.0"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
